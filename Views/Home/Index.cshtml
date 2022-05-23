@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <partial name="_AlertMessage" />
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<p>@Url.Action("Index","Product")</p> 
+<a asp-action="Index" asp-controller="Product" asp-area="Product">Product Link</a>
+<a asp-action ="ViewProduct" asp-controller="First" asp-route-id="3">Get Product have Id is 3</a>
+<br>
+
+@{
+    var routeData = new Dictionary<string , string>()
+        {
+            {"name", "Prince_Wolf"},
+            {"abc","data accepted"},
+        };
+    
+}
+<a asp-action ="ViewProduct" asp-controller="First" asp-route-all="@routeData">
+  Using asp-route-all 
+</a>

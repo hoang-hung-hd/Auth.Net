@@ -1,0 +1,46 @@
+@page "/admin/member"
+@model App.Admin.User.IndexModel
+@{
+    ViewData["Title"] = "Danh sách người dùng";
+}
+<h2>@ViewData["Title"]</h2>
+<partial name="_StatusMessage" model="@Model.StatusMessage"></partial>
+<p>Tổng số thành viên: @Model.totalUsers</p>
+
+<div class="mb-2">
+    <a class="btn btn-secondary" asp-page="./Create">Tạo role mới</a>
+    <a class="btn btn-secondary" asp-page="../User/Index">Quản lý thành viên</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Tên người dùng</th>
+        <th>Vai trò</th>
+    </tr>
+    @foreach (var user in Model.users)
+    {
+        <tr>
+            <td>
+                <p>@user.UserName</p>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                <a class="btn btn-success btn-sm" asp-page="./Edit" asp-route-id="@user.Id">Cập nhật</a>
+                <a class="btn btn-success btn-sm" asp-page="./Delete" asp-route-id="@user.Id">Xóa</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@{
+    var pagingmodel = new XTL.Helpers.PagingModel()
+    {
+        currentpage = Model.currentPage,
+        countpages = Model.countPages,
+        generateUrl = (int? p) => Url.Page("./Index", new { p = p})
+    };
+}
+
+<partial name="_PagingXTL" model="@pagingmodel" />

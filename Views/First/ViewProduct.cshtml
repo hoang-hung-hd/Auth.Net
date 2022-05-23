@@ -1,0 +1,19 @@
+ @model App.Models.ProductModel
+
+ @*
+  @{
+      var product1 = ViewData["product"] as ProductModel
+      var product2 = ViewBag.product as ProductModel
+  }
+ *@
+
+<h4>Product Id : @Model.Id</h4>
+<h4>Product Name: @Model.Name</h4>
+<h4>Product Price: @Model.Price</h4> 
+
+@* 
+    <h4>@product.Id</h4> 
+    <h4>@product.Name</h4> 
+    <h4>@product.Price</h4> 
+
+*@

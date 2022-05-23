@@ -1,0 +1,17 @@
+@inject App.Services.PlanetService planetService
+@model App.Models.PlanetModel
+
+<h1>@Model.Name</h1>
+
+<div class="card w-50">
+    <img src="~/PlanetImage/@(Model.Name).jpg" alt="">
+
+    <div class="card-body">
+        <h5>@Model.VnName</h5>
+        <div class="card-text">
+            @Model.Content
+        </div>
+
+        <a href="Index" class="card-link">Cac hanh tinh</a>
+    </div>
+</div>
