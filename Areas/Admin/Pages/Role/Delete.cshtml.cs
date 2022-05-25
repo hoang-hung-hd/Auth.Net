@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace App.Admin.Role
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
     public class DeleteModel : RolePageModel
     {

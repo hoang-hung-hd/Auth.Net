@@ -11,7 +11,7 @@ using App.Models;
 
 namespace App.Admin.Role
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
     public class CreateModel : RolePageModel
     {

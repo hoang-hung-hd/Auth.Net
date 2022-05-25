@@ -1,39 +1,38 @@
-@page "/admin/member"
+@page "/admin/members"
 @model App.Admin.User.IndexModel
 @{
-    ViewData["Title"] = "Danh sách người dùng";
+    ViewData["Title"] = "Danh sách các thành viên";
 }
 <h2>@ViewData["Title"]</h2>
 <partial name="_StatusMessage" model="@Model.StatusMessage"></partial>
 <p>Tổng số thành viên: @Model.totalUsers</p>
 
-<div class="mb-2">
-    <a class="btn btn-secondary" asp-page="./Create">Tạo role mới</a>
-    <a class="btn btn-secondary" asp-page="../User/Index">Quản lý thành viên</a>
-</div>
-
 <table class="table">
     <tr>
-        <th>Tên người dùng</th>
-        <th>Vai trò</th>
+        <th>Tên user</th>
+        <th>Vai trò (role)</th>
+        <th>Tác vụ</th>
     </tr>
     @foreach (var user in Model.users)
     {
         <tr>
+            <td>@user.UserName</td>
             <td>
-                <p>@user.UserName</p>
+                @if (string.IsNullOrEmpty(user.RoleNames))
+                {
+                    <a class="text-dark" asp-page="./AddRole" asp-route-id="@user.Id">+ Thêm roles</a>
+                }
+                else
+                {
+                    <a asp-page="./AddRole" asp-route-id="@user.Id">@user.RoleNames</a>
+                }
             </td>
             <td>
-
-            </td>
-            <td>
-                <a class="btn btn-success btn-sm" asp-page="./Edit" asp-route-id="@user.Id">Cập nhật</a>
-                <a class="btn btn-success btn-sm" asp-page="./Delete" asp-route-id="@user.Id">Xóa</a>
+                <a class="btn btn-success btn-sm" asp-page="./SetPassword" asp-route-id="@user.Id">Đặt mật khẩu</a>
             </td>
         </tr>
     }
 </table>
-
 @{
     var pagingmodel = new XTL.Helpers.PagingModel()
     {
