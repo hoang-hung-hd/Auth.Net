@@ -12,10 +12,10 @@ namespace App.Admin.Role
 
           [TempData]
           public string StatusMessage { get; set; }
-          public RolePageModel(RoleManager<IdentityRole> roleManager, AppDbContext myBlogContext)
+          public RolePageModel(RoleManager<IdentityRole> roleManager, AppDbContext appDbContext)
           {
               _roleManager = roleManager;
-              _context = myBlogContext;
+              _context = appDbContext;
           }
     }
 }

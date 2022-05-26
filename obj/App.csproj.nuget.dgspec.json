@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\WorkSpace\\Git_Clone\\Auth.Net\\App.csproj": {}
+    "E:\\C#\\Youtube\\Git_Dowload\\Auth.Net\\App.csproj": {}
   },
   "projects": {
-    "C:\\WorkSpace\\Git_Clone\\Auth.Net\\App.csproj": {
+    "E:\\C#\\Youtube\\Git_Dowload\\Auth.Net\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\WorkSpace\\Git_Clone\\Auth.Net\\App.csproj",
+        "projectUniqueName": "E:\\C#\\Youtube\\Git_Dowload\\Auth.Net\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\WorkSpace\\Git_Clone\\Auth.Net\\App.csproj",
+        "projectPath": "E:\\C#\\Youtube\\Git_Dowload\\Auth.Net\\App.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\WorkSpace\\Git_Clone\\Auth.Net\\obj\\",
+        "outputPath": "E:\\C#\\Youtube\\Git_Dowload\\Auth.Net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -133,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
