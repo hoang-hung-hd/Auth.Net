@@ -64,9 +64,10 @@ namespace App.Admin.User
             {
                 return NotFound($"Không thấy user, id = {id}.");
             }
-
+            // Role đang được gán cho User
             RoleNames = (await _userManager.GetRolesAsync(user)).ToArray<string>();
-
+            
+            // Tất cả role có trong database
             List<string> roleNames = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
             allRoles = new SelectList(roleNames);
 
@@ -109,7 +110,7 @@ namespace App.Admin.User
                 return NotFound($"Không thấy user, id = {id}.");
             }
 
-            // RoleNames
+            // RoleNames : là những roles submit từ form lên 
 
             await GetClaims(id);
 

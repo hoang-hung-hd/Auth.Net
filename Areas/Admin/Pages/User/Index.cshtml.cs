@@ -11,7 +11,7 @@ using App.Models;
 
 namespace App.Admin.User
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
     public class IndexModel : PageModel
     {
@@ -32,7 +32,7 @@ namespace App.Admin.User
 
         public List<UserAndRole> users  {set; get;}
         public int totalUsers { get; set; }
-        public const int ITEMS_PER_PAGE = 15;
+        public const int ITEMS_PER_PAGE = 10;
 
         [BindProperty(SupportsGet = true, Name = "p")]
         public int currentPage { get; set; }
