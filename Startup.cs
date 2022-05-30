@@ -99,7 +99,6 @@ namespace App
                     // .AddTwitter()
                     // .AddMicrosoftAccount()
                     ;
-
                     
             services.AddControllersWithViews();
             services.AddRazorPages();
