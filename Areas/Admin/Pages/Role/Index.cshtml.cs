@@ -12,6 +12,7 @@ using App.Models;
 namespace App.Admin.Role
 {
     [Authorize(Roles = "Admin")]
+    [Area("Admin.Role")]
     public class IndexModel : RolePageModel
     {
         public IndexModel(RoleManager<IdentityRole> roleManager, AppDbContext appDbContext) : base(roleManager, appDbContext)

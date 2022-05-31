@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using App.ExtendMethods;
 using App.Models;
 using App.Services;
+using App.Security.Requirements;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace App
 {
@@ -113,6 +115,34 @@ namespace App
             services.Configure<RazorViewEngineOptions>(options =>{
                 options.ViewLocationFormats.Add("/MyView/{1}/{0}" + RazorViewEngine.ViewExtension);
             });
+
+            services.AddAuthorization(options => {
+
+                    options.AddPolicy("AllowEditRole", policyBuilder => {
+                        policyBuilder.RequireAuthenticatedUser();
+                        policyBuilder.RequireClaim("canedit", "user");
+                    });
+
+                    options.AddPolicy("InGenZ", policyBuilder => {
+                        policyBuilder.RequireAuthenticatedUser();
+                        // policyBuilder.RequireClaim("canedit", "user");
+                        policyBuilder.Requirements.Add(new GenZRequirement()); // GenZRequirement
+
+                    //     // new GenZRequirement() -> Authorization handler
+
+                    });   
+
+                    options.AddPolicy("ShowAdminMenu", pb => {
+                        pb.RequireRole("Admin");
+                    });      
+
+                    // options.AddPolicy("CanUpdateArticle", builder => {
+                    //     builder.Requirements.Add(new ArticleUpdateRequirement()); 
+                    // });      
+
+                });
+
+            services.AddTransient<IAuthorizationHandler, AppAuthorizationHandler>();
 
             services.AddSingleton<ProductService>();
             services.AddSingleton<PlanetService>();

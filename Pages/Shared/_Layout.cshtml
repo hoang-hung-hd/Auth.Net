@@ -39,10 +39,12 @@
                             <a class="nav-link text-dark" asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
                                 <i class="fas fa-phone-alt"></i>
                                 Liên hệ</a>
-                        </li>                        
+                        </li>  
+                         <partial name="_AdminMenu" />
+
                     </ul>
                     @* @await Html.PartialAsync("_CartPartial") *@
-                    <partial name="_MenuManagePartial" />
+                    @* <partial name="_MenuManagePartial" /> *@
                     <partial name="_LoginPartial" />
 
                     

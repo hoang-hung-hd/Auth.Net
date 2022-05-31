@@ -9,10 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using App.Models;
 
 namespace App.Admin.User
 {
+    [Authorize(Policy = "InGenZ")] 
     public class AddRoleModel : PageModel
     {
         private readonly UserManager<AppUser> _userManager;

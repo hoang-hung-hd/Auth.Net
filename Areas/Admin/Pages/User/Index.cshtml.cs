@@ -12,7 +12,7 @@ using App.Models;
 namespace App.Admin.User
 {
     [Authorize(Roles = "Admin")]
-
+    [Area("User")]
     public class IndexModel : PageModel
     {
         private readonly UserManager<AppUser> _userManager;

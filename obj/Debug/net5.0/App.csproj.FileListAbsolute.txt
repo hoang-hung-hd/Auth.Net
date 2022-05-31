@@ -784,3 +784,4 @@ C:\WorkSpace\Git_Clone\Auth.Net\obj\Debug\net5.0\Razor\Areas\Admin\Pages\User\Ad
 C:\WorkSpace\Git_Clone\Auth.Net\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Role\AddRoleClaim.cshtml.g.cs
 C:\WorkSpace\Git_Clone\Auth.Net\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Role\EditRoleClaim.cshtml.g.cs
 C:\WorkSpace\Git_Clone\Auth.Net\obj\Debug\net5.0\Razor\Areas\Admin\Pages\User\EditUserRoleClaim.cshtml.g.cs
+C:\WorkSpace\Git_Clone\Auth.Net\obj\Debug\net5.0\Razor\Pages\Shared\_AdminMenu.cshtml.g.cs
